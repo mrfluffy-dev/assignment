@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mrfluffy-dev</title>
+  <script src="/pages/loadSrc.js"></script>
+</head>
+<body onload="loadSidebar()">
+  <div id="sidebar">
+    <!-- Sidebar content will be loaded dynamically here -->
+  </div>
+
+  <div id="toggle-btn" onclick="toggleSidebar()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <path fill="currentColor" d="M3 13h18v-2H3v2zm0 5h18v-2H3v2zm0-10v2h18V8H3z"/>
+    </svg>
+  </div>
+
+  <div id="content">
+    <h1>Star Wars</h1>
+    <div class="parent">
+      <div id="div1">
+        <!-- make a text input that's value will be used for loadPeople -->
+        <input type="text" id="person1" placeholder="Enter a person">
+        <button onclick="loadPeople(document.getElementById('person1').value,1)">Load People</button>
+        <div id="people1">
+          <!-- People data will be loaded here -->
+        </div>
+      </div>
+
+      <div id="div2">
+        <!-- make a text input that's value will be used for loadPeople -->
+        <input type="text" id="person2" placeholder="Enter a person">
+        <button onclick="loadPeople(document.getElementById('person2').value,2)">Load People</button>
+        <div id="people2">
+          <!-- People data will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

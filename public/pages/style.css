@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #282a36; /* Dracula theme background color */
+  color: #f8f8f2; /* Dracula theme text color */
+}
+
+
+/*give h1 Dracula green*/
+h1 {
+  color: #50fa7b;
+}
+/*give h2 Dracula orange*/
+h2 {
+  color: #ffb86c;
+}
+
+/*give h3 Dracula yello*/
+h3 {
+  color: #f1fa8c;
+}
+
+/*give code Dracula red*/
+code {
+  color: #ff5555;
+}
+/*give a Dracula pink*/
+a {
+  color: #ff79c6;
+}
+/*give pre Dracula red*/
+pre {
+  color: #ff5555;
+  background-color: #1e1f2a;
+}
+
+
+#sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  background-color: #1e1f2a; /* Dracula theme background color */
+  color: #f8f8f2; /* Dracula theme text color */
+  transition: transform 0.3s ease;
+}
+
+.sideContent {
+  /* make the background color darker then the sidebar */
+  padding: 7px;
+  background-color: #282a36;
+  /* rounded corners */
+  border-radius: 0 15px 15px 0;
+}
+
+.sideContent:hover {
+  background-color: #21222c; /* New background color when hovering */
+}
+
+
+
+.sideContent a {
+  color: #ff79c6; /* Default link color */
+}
+
+.sideContent:hover a {
+  color: #8a2be2; /* New link color when hovering */
+}
+
+#sidebar.collapsed {
+  transform: translateX(-200px);
+}
+
+#content {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+#content.collapsed {
+  /* animation: content-collapse 0.3s ease; */
+    margin-left: 30px;
+}
+
+#toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 175px;
+  cursor: pointer;
+  color: #f8f8f2; /* Dracula theme text color */
+  transition: transform 0.3s ease;
+}
+
+#toggle-btn.collapsed {
+  transform: translateX(-170px);
+}
+
+#toggle-btn:hover {
+  color: #6272a4; /* Dracula theme hover color */
+}
+
+.parent {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#div1, #div2 {
+  width: 45%; /* Adjust as needed */
+  overflow: auto; 
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#people1, #people2 {
+  font-family: 'Arial', sans-serif; /* Change as needed */
+  color: #ff79c6; /* Change as needed */
+  line-height: 1.6;
+  font-size: 32px; /* Change as needed */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green */
+}
