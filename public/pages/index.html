@@ -5,38 +5,213 @@
   <title>Mrfluffy-dev</title>
   <script src="/pages/loadSrc.js"></script>
 </head>
-<body onload="loadSidebar()">
-  <div id="sidebar">
-    <!-- Sidebar content will be loaded dynamically here -->
+<body >
+  <!--  onload="loadSidebar()" 
+    <div id="sidebar">
+    Sidebar content will be loaded dynamically here 
   </div>
 
   <div id="toggle-btn" onclick="toggleSidebar()">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
       <path fill="currentColor" d="M3 13h18v-2H3v2zm0 5h18v-2H3v2zm0-10v2h18V8H3z"/>
     </svg>
-  </div>
+  </div> -->
 
   <div id="content">
     <h1>Star Wars</h1>
     <div class="parent">
       <div id="div1">
-        <!-- make a text input that's value will be used for loadPeople -->
-        <input type="text" id="person1" placeholder="Enter a person">
-        <button onclick="loadPeople(document.getElementById('person1').value,1)">Load People</button>
+        <!-- make a dropdown that's value will be used for loadPeople -->
+        <select id="person1">
+          <option value="">Select a person</option>
+          <option value="Luke Skywalker">Luke Skywalker</option>
+          <option value="C-3PO">C-3PO</option>
+          <option value="R2-D2">R2-D2</option>
+          <option value="Darth Vader">Darth Vader</option>
+          <option value="Leia Organa">Leia Organa</option>
+          <option value="Owen Lars">Owen Lars</option>
+          <option value="Beru Whitesun lars">Beru Whitesun lars</option>
+          <option value="R5-D4">R5-D4</option>
+          <option value="Biggs Darklighter">Biggs Darklighter</option>
+          <option value="Obi-Wan Kenobi">Obi-Wan Kenobi</option>
+          <option value="Anakin Skywalker">Anakin Skywalker</option>
+          <option value="Wilhuff Tarkin">Wilhuff Tarkin</option>
+          <option value="Chewbacca">Chewbacca</option>
+          <option value="Han Solo">Han Solo</option>
+          <option value="Greedo">Greedo</option>
+          <option value="Jabba Desilijic Tiure">Jabba Desilijic Tiure</option>
+          <option value="Wedge Antilles">Wedge Antilles</option>
+          <option value="Jek Tono Porkins">Jek Tono Porkins</option>
+          <option value="Yoda">Yoda</option>
+          <option value="Palpatine">Palpatine</option>
+          <option value="Boba Fett">Boba Fett</option>
+          <option value="IG-88">IG-88</option>
+          <option value="Bossk">Bossk</option>
+          <option value="Lando Calrissian">Lando Calrissian</option>
+          <option value="Lobot">Lobot</option>
+          <option value="Ackbar">Ackbar</option>
+          <option value="Mon Mothma">Mon Mothma</option>
+          <option value="Arvel Crynyd">Arvel Crynyd</option>
+          <option value="Wicket Systri Warrick">Wicket Systri Warrick</option>
+          <option value="Nien Nunb">Nien Nunb</option>
+          <option value="Qui-Gon Jinn">Qui-Gon Jinn</option>
+          <option value="Nute Gunray">Nute Gunray</option>
+          <option value="Finis Valorum">Finis Valorum</option>
+          <option value="Padmé Amidala">Padmé Amidala</option>
+          <option value="Jar Jar Binks">Jar Jar Binks</option>
+          <option value="Roos Tarpals">Roos Tarpals</option>
+          <option value="Rugor Nass">Rugor Nass</option>
+          <option value="Ric Olié">Ric Olié</option>
+          <option value="Watto">Watto</option>
+          <option value="Sebulba">Sebulba</option>
+          <option value="Quarsh Panaka">Quarsh Panaka</option>
+          <option value="Shmi Skywalker">Shmi Skywalker</option>
+          <option value="Darth Maul">Darth Maul</option>
+          <option value="Bib Fortuna">Bib Fortuna</option>
+          <option value="Ayla Secura">Ayla Secura</option>
+          <option value="Ratts Tyerel">Ratts Tyerel</option>
+          <option value="Dud Bolt">Dud Bolt</option>
+          <option value="Gasgano">Gasgano</option>
+          <option value="Ben Quadinaros">Ben Quadinaros</option>
+          <option value="Mace Windu">Mace Windu</option>
+          <option value="Ki-Adi-Mundi">Ki-Adi-Mundi</option>
+          <option value="Kit Fisto">Kit Fisto</option>
+          <option value="Eeth Koth">Eeth Koth</option>
+          <option value="Adi Gallia">Adi Gallia</option>
+          <option value="Saesee Tiin">Saesee Tiin</option>
+          <option value="Yarael Poof">Yarael Poof</option>
+          <option value="Plo Koon">Plo Koon</option>
+          <option value="Mas Amedda">Mas Amedda</option>
+          <option value="Gregar Typho">Gregar Typho</option>
+          <option value="Cordé">Cordé</option>
+          <option value="Cliegg Lars">Cliegg Lars</option>
+          <option value="Poggle the Lesser">Poggle the Lesser</option>
+          <option value="Luminara Unduli">Luminara Unduli</option>
+          <option value="Barriss Offee">Barriss Offee</option>
+          <option value="Dormé">Dormé</option>
+          <option value="Dooku">Dooku</option>
+          <option value="Bail Prestor Organa">Bail Prestor Organa</option>
+          <option value="Jango Fett">Jango Fett</option>
+          <option value="Zam Wesell">Zam Wesell</option>
+          <option value="Dexter Jettster">Dexter Jettster</option>
+          <option value="Lama Su">Lama Su</option>
+          <option value="Taun We">Taun We</option>
+          <option value="Jocasta Nu">Jocasta Nu</option>
+          <option value="R4-P17">R4-P17</option>
+          <option value="Wat Tambor">Wat Tambor</option>
+          <option value="San Hill">San Hill</option>
+          <option value="Shaak Ti">Shaak Ti</option>
+          <option value="Grievous">Grievous</option>
+          <option value="Tarfful">Tarfful</option>
+          <option value="Raymus Antilles">Raymus Antilles</option>
+          <option value="Sly Moore">Sly Moore</option>
+            <!-- Add more options here -->
+        </select>
+        <button onclick="loadPeople(document.getElementById('person1').value,1)">Load Person</button>
         <div id="people1">
-          <!-- People data will be loaded here -->
+            <!-- People data will be loaded here -->
         </div>
-      </div>
-
-      <div id="div2">
-        <!-- make a text input that's value will be used for loadPeople -->
-        <input type="text" id="person2" placeholder="Enter a person">
-        <button onclick="loadPeople(document.getElementById('person2').value,2)">Load People</button>
+    </div>
+    
+    <div id="div2">
+        <!-- make a dropdown that's value will be used for loadPeople -->
+        <select id="person2">
+          <option value="">Select a person</option>
+          <option value="Luke Skywalker">Luke Skywalker</option>
+          <option value="C-3PO">C-3PO</option>
+          <option value="R2-D2">R2-D2</option>
+          <option value="Darth Vader">Darth Vader</option>
+          <option value="Leia Organa">Leia Organa</option>
+          <option value="Owen Lars">Owen Lars</option>
+          <option value="Beru Whitesun lars">Beru Whitesun lars</option>
+          <option value="R5-D4">R5-D4</option>
+          <option value="Biggs Darklighter">Biggs Darklighter</option>
+          <option value="Obi-Wan Kenobi">Obi-Wan Kenobi</option>
+          <option value="Anakin Skywalker">Anakin Skywalker</option>
+          <option value="Wilhuff Tarkin">Wilhuff Tarkin</option>
+          <option value="Chewbacca">Chewbacca</option>
+          <option value="Han Solo">Han Solo</option>
+          <option value="Greedo">Greedo</option>
+          <option value="Jabba Desilijic Tiure">Jabba Desilijic Tiure</option>
+          <option value="Wedge Antilles">Wedge Antilles</option>
+          <option value="Jek Tono Porkins">Jek Tono Porkins</option>
+          <option value="Yoda">Yoda</option>
+          <option value="Palpatine">Palpatine</option>
+          <option value="Boba Fett">Boba Fett</option>
+          <option value="IG-88">IG-88</option>
+          <option value="Bossk">Bossk</option>
+          <option value="Lando Calrissian">Lando Calrissian</option>
+          <option value="Lobot">Lobot</option>
+          <option value="Ackbar">Ackbar</option>
+          <option value="Mon Mothma">Mon Mothma</option>
+          <option value="Arvel Crynyd">Arvel Crynyd</option>
+          <option value="Wicket Systri Warrick">Wicket Systri Warrick</option>
+          <option value="Nien Nunb">Nien Nunb</option>
+          <option value="Qui-Gon Jinn">Qui-Gon Jinn</option>
+          <option value="Nute Gunray">Nute Gunray</option>
+          <option value="Finis Valorum">Finis Valorum</option>
+          <option value="Padmé Amidala">Padmé Amidala</option>
+          <option value="Jar Jar Binks">Jar Jar Binks</option>
+          <option value="Roos Tarpals">Roos Tarpals</option>
+          <option value="Rugor Nass">Rugor Nass</option>
+          <option value="Ric Olié">Ric Olié</option>
+          <option value="Watto">Watto</option>
+          <option value="Sebulba">Sebulba</option>
+          <option value="Quarsh Panaka">Quarsh Panaka</option>
+          <option value="Shmi Skywalker">Shmi Skywalker</option>
+          <option value="Darth Maul">Darth Maul</option>
+          <option value="Bib Fortuna">Bib Fortuna</option>
+          <option value="Ayla Secura">Ayla Secura</option>
+          <option value="Ratts Tyerel">Ratts Tyerel</option>
+          <option value="Dud Bolt">Dud Bolt</option>
+          <option value="Gasgano">Gasgano</option>
+          <option value="Ben Quadinaros">Ben Quadinaros</option>
+          <option value="Mace Windu">Mace Windu</option>
+          <option value="Ki-Adi-Mundi">Ki-Adi-Mundi</option>
+          <option value="Kit Fisto">Kit Fisto</option>
+          <option value="Eeth Koth">Eeth Koth</option>
+          <option value="Adi Gallia">Adi Gallia</option>
+          <option value="Saesee Tiin">Saesee Tiin</option>
+          <option value="Yarael Poof">Yarael Poof</option>
+          <option value="Plo Koon">Plo Koon</option>
+          <option value="Mas Amedda">Mas Amedda</option>
+          <option value="Gregar Typho">Gregar Typho</option>
+          <option value="Cordé">Cordé</option>
+          <option value="Cliegg Lars">Cliegg Lars</option>
+          <option value="Poggle the Lesser">Poggle the Lesser</option>
+          <option value="Luminara Unduli">Luminara Unduli</option>
+          <option value="Barriss Offee">Barriss Offee</option>
+          <option value="Dormé">Dormé</option>
+          <option value="Dooku">Dooku</option>
+          <option value="Bail Prestor Organa">Bail Prestor Organa</option>
+          <option value="Jango Fett">Jango Fett</option>
+          <option value="Zam Wesell">Zam Wesell</option>
+          <option value="Dexter Jettster">Dexter Jettster</option>
+          <option value="Lama Su">Lama Su</option>
+          <option value="Taun We">Taun We</option>
+          <option value="Jocasta Nu">Jocasta Nu</option>
+          <option value="R4-P17">R4-P17</option>
+          <option value="Wat Tambor">Wat Tambor</option>
+          <option value="San Hill">San Hill</option>
+          <option value="Shaak Ti">Shaak Ti</option>
+          <option value="Grievous">Grievous</option>
+          <option value="Tarfful">Tarfful</option>
+          <option value="Raymus Antilles">Raymus Antilles</option>
+          <option value="Sly Moore">Sly Moore</option>
+            <!-- Add more options here -->
+        </select>
+        <button onclick="loadPeople(document.getElementById('person2').value,2)">Load Person</button>
         <div id="people2">
-          <!-- People data will be loaded here -->
+            <!-- People data will be loaded here -->
         </div>
-      </div>
+    </div>
+    </div>
+    <!-- battle generate batt -->
+    <button onclick="loadBattle(document.getElementById('person1').value, document.getElementById('person2').value)">Battle</button>
+    <div id="battle">
+      <!-- Battle result will be loaded here -->
     </div>
   </div>
 </body>
 </html>
+

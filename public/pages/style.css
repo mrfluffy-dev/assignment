@@ -127,6 +127,13 @@ input[type="text"] {
   font-size: 32px; /* Change as needed */
 }
 
+#battle{
+  font-family: 'Arial', sans-serif; /* Change as needed */
+  color: #50fa7b; /* Change as needed */
+  line-height: 1.6;
+  font-size: 20px; /* Change as needed */
+}
+
 button {
   padding: 10px 20px;
   border: none;
