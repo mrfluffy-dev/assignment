@@ -2,7 +2,8 @@ use actix_web::{web, get, App, HttpServer, HttpResponse, Responder};
 use isahc::config::Configurable;
 use isahc::{ReadResponseExt, Request, RequestExt};
 use serde::{Serialize};
-
+use serde_json::json;
+use serde_json::Value;
 
 #[derive(Debug, Serialize)]
 struct People {
@@ -120,6 +121,55 @@ fn search_people(query: String) -> People {
 }
 
 
+
+fn get_battle(name: String, name2: String) -> String {
+    let json = json!({
+        "model": "dolphin-llama3",
+        "prompt": format!("make a story of a battle against {} and {} (use <br> for new lines) 50 words max no more then 50 words", name, name2),
+        "stream": false,
+        "raw": true,
+        "options": {
+            "numa": false,
+            "num_ctx": 1024,
+            "num_batch": 2,
+            "num_gqa": 1,
+            "num_gpu": 0,
+            "main_gpu": 0,
+            "low_vram": false,
+            "f16_kv": true,
+            "vocab_only": false,
+            "use_mmap": true,
+            "use_mlock": false,
+            "rope_frequency_base": 1.1,
+            "rope_frequency_scale": 0.8,
+            "num_thread": 8
+        }
+    });
+
+    let resp = Request::builder()
+        .method("POST")
+        .uri("http://192.168.1.154:11434/api/generate")
+        .header("Content-Type", "application/json")
+        .header("Accept", "application/json")
+        .body(json.to_string())
+        .unwrap()
+        .send()
+        .unwrap()
+        .text()
+        .unwrap();
+
+    let json: Value = serde_json::from_str(&resp).unwrap();
+
+    let story = json["response"]
+        .as_str()
+        .unwrap()
+        .to_string();
+
+    story
+}
+
+
+
 #[get("/api/{name}")]
 async fn index(name: web::Path<String>) -> impl Responder {
     let name = name.into_inner();
@@ -129,16 +179,27 @@ async fn index(name: web::Path<String>) -> impl Responder {
              person.name, person.height, person.mass, person.hair_color, person.skin_color, person.eye_color, person.birth_year, person.gender);
     HttpResponse::Ok().json(person)
 }
+#[get("/battle/{name}/{name2}")]
+async fn battle(info: web::Path<(String, String)>) -> impl Responder {
+    let (name, name2) = info.into_inner();
+    println!("name: {} name2: {}", name, name2);
+    let story = get_battle(name, name2);
+    // Print all attributes of the person
+    println!("story: {}", story);
+    HttpResponse::Ok().json(story)
+}
+
 
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
+            .service(battle)
             .service(index)
-            .service(actix_files::Files::new("/", "public").index_file("pages/index.html"))
+            .service(actix_files::Files::new("/", "/public").index_file("pages/index.html"))
     })
-    .bind(("0.0.0.0", 4200))?
+    .bind(("0.0.0.0", 3424))?
     .run()
     .await
 }
